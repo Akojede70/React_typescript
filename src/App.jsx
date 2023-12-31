@@ -12,6 +12,9 @@ import Counter from "./components/counter";
 import { ThemeContextProvider } from "./components/context/ThemeContext"; // Check the file path
 import { Box } from "./components/context/box";
 import RandomNumber from "./components/restriction/RandomNumber";
+import Toast from "./components/templateliterals/Toast";
+import CustomButton from "./components/html/Button";
+import { Text } from "./components/polymorphic/text";
 
 function App() {
   // Person
@@ -62,6 +65,19 @@ function App() {
         <Box />
       </ThemeContextProvider>
       <RandomNumber value={10} isPositive />
+      <Toast position="center" />
+      {/* html folder */}
+      <CustomButton variant="primary" onClick={() => console.log("clicked")} />
+      {/* polymophic folder */}
+      <Text as="h1" size="lg">
+        Heading
+      </Text>
+      <Text as="p" size="md">
+        Paragraphs
+      </Text>
+      <Text as="label" html_For="someId" size="sm" color="secondary">
+        Label
+      </Text>
     </div>
   );
 }
